@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pokemon API MVP</string>
+
+    <string name="text_header">รายชื่อโปเกมอน</string>
+    <string name="text_view_data">ดูข้อมูล</string>
+    <string name="text_pokemon_detail">รายละเอียดโปเกมอน</string>
+</resources>
