@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import io.github.orbitalno11.pokemonapimvp.adapter.base.BaseListAdapterView
 import io.github.orbitalno11.pokemonapimvp.adapter.base.BaseViewHolder
+import io.github.orbitalno11.pokemonapimvp.models.Pokemon
 import io.github.orbitalno11.pokemonapimvp.models.PokemonLess
 
 class PokemonListAdapter: BaseListAdapterView<BaseViewHolder, PokemonListAdapterInterface.Presenter>(), PokemonListAdapterInterface.Adapter {
@@ -26,7 +27,7 @@ class PokemonListAdapter: BaseListAdapterView<BaseViewHolder, PokemonListAdapter
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val i = getPresenter().getItem(position)
-        val item: PokemonLess = i as PokemonLess
+        val item: Pokemon = i as Pokemon
         val hold: Holder = holder as Holder
         hold.setHolderClick(itemClickListener)
         hold.onBind(item)

@@ -1,12 +1,15 @@
 package io.github.orbitalno11.pokemonapimvp.ui.home
 
 import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.orbitalno11.pokemonapimvp.R
 import io.github.orbitalno11.pokemonapimvp.adapter.adapter.pokemonList.PokemonListAdapter
+import io.github.orbitalno11.pokemonapimvp.models.Pokemon
 import io.github.orbitalno11.pokemonapimvp.models.PokemonLess
 import io.github.orbitalno11.pokemonapimvp.ui.base.BaseMvpFragment
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class Home : BaseMvpFragment<HomeInterface.Presenter>(), HomeInterface.View {
 
@@ -44,7 +47,11 @@ class Home : BaseMvpFragment<HomeInterface.Presenter>(), HomeInterface.View {
         getPresenter().loadPokemonData()
     }
 
-    override fun setupList(items: List<PokemonLess>) {
+    override fun setupList(items: List<Pokemon>) {
         pokemonAdapter.setItems(items)
+    }
+
+    override fun setHeaderText(txt: String) {
+        page_header.text = txt
     }
 }

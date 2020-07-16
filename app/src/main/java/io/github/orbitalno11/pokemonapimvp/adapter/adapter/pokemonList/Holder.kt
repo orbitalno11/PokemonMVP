@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import io.github.orbitalno11.pokemonapimvp.R
 import io.github.orbitalno11.pokemonapimvp.adapter.base.BaseViewHolder
+import io.github.orbitalno11.pokemonapimvp.models.Pokemon
 import io.github.orbitalno11.pokemonapimvp.models.PokemonLess
 
 class Holder(private val parent: ViewGroup): BaseViewHolder(parent, R.layout.list_pokemon) {
@@ -18,7 +19,7 @@ class Holder(private val parent: ViewGroup): BaseViewHolder(parent, R.layout.lis
         picture = view.findViewById(R.id.pokemon_picture)
     }
 
-    fun onBind(item: PokemonLess){
+    fun onBind(item: Pokemon){
         name.text = item.name
         itemView.setOnClickListener(listener)
     }
